@@ -1,0 +1,21 @@
+{
+  "app": {
+    "port": 8101,
+    "prefix": "/dms-app"
+  },
+  "platform": {
+    "url": "https://platformtest.net",
+    "sk_key": "test321",
+    "user": "api_test"
+  },
+  "token": {
+    "asts": "iZ7FduQw5sowtrD01feeDhglUvQi7KOofgaRQl6jhaba",
+    "aste": 180,
+    "alts": "ICacj3dMacCmmievwFP7dhub0upEZhgr3inyM4sTVxg4",
+    "alte": 3600,
+    "rts": "Xr0OfXjXtTD+jksIkBVFvr1h4vcuHhZxPtYkDvspQJI6",
+    "rte": 86400
+  },
+  "logPath": "/log/dms-app",
+  "apps-config": {}
+}
