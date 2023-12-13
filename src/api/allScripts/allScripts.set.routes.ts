@@ -13,19 +13,17 @@ deploySetRoutes.post(
   // authenticateShortJWT,
   asyncHandler(async (req: any, res: Response) => {
     const { app } = req.params
-    alert(1)
     console.log("inside")
+    console.log("app", app)
     // if (!appsConfig[app]) {
     //   return res.json({ error: true, message: "Unknown app name!" })
     // }
-    const { devel } = req.body
-
-    // const configs: AppConfig = { buildRequired, repo, devel }
-    // const phases: Phase[] = await deployApp(app, devel, appsConfig[app])
+    // const { devel } = req.body
     const data = await allScripts()
+    console.log("data", data)
     const message: string = "ok"
 
-    res.json({ error: data, message, data })
+    res.json({ error: false, message, data })
   })
 )
 
