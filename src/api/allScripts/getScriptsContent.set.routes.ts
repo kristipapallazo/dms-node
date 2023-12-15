@@ -1,23 +1,22 @@
 import { Response, Router } from "express"
 import { asyncHandler } from "../../utils"
 import fs from "fs/promises"
-import path from "path"
 import getFilePath from "../../utils/getFilePath"
 
 const getScriptsContent = Router()
 
 getScriptsContent.post(
-  "/:app",
+  "/:script",
   // authenticateShortJWT,
   asyncHandler(async (req: any, res: Response) => {
-    const { app } = req.params
-    console.log("app", app)
+    const { script } = req.params
+    console.log("script", script)
     try {
       console.log("okay")
-      const filePath: string | undefined = getFilePath("allScripts.js")
+      console.log("first")
+      const filePath: string | undefined = getFilePath(`${script}.ts`)
       if (filePath) {
         const fileContent = await fs.readFile(filePath, "utf-8")
-        console.log("fileContent", fileContent)
         res.setHeader("Content-Type", "application/json")
         res.json({ content: fileContent })
       } else {

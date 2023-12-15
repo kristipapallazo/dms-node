@@ -3,7 +3,6 @@ import cors from "cors"
 // import bodyParser from "body-parser"
 import routes from "./routes"
 import config from "config"
-import path from "path"
 
 const app = express()
 app.listen()

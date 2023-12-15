@@ -5,6 +5,6 @@ import { allScriptsRoutes, allScriptsSetRoutes, getScriptsContent } from "./api/
 
 // routes.use(`/all-scripts`, allScriptsRoutes) //get
 routes.use(`/all-scripts`, allScriptsSetRoutes) //post
-routes.use("/getScriptsContent", getScriptsContent)
+routes.use(`/getScriptsContent`, getScriptsContent)
 
 export default routes
