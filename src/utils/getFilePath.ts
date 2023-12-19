@@ -7,11 +7,6 @@ const getFilePath = (fileName: string): string | undefined => {
   console.log("filePath", filePath)
   return filePath
 }
-export const getFolderPath = (): string => {
-  // if (!folderName) return undefined
-  const folderPath: string = path.join(__dirname, "../external_folder")
-  console.log("folderPath", folderPath)
-  return folderPath
-}
+export const getFolderPath = (folder_path: string): string => path.join(__dirname, "../external_folder", folder_path)
 
 export default getFilePath
