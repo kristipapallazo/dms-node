@@ -1,12 +1,14 @@
 import path from "path"
 
-const getFilePath = (fileName: string): string | undefined => {
-  if (!fileName) return undefined
-  console.log("__dirname", __dirname)
-  const filePath: string = path.join(__dirname, "../external_folder", fileName)
-  console.log("filePath", filePath)
+const getFilePath = (parentPath: string | undefined, fileName: string | undefined): string | undefined => {
+  if (!fileName || !parentPath) return undefined
+  const filePath: string = path.join(parentPath, fileName)
+  // const filePath: string = path.join(__dirname, "../external_folder", fileName)
   return filePath
 }
-export const getFolderPath = (folder_path: string): string => path.join(__dirname, "../external_folder", folder_path)
+export const getFolderPath = (parentPath?: string, current?: string): string => {
+  if (!parentPath || !current) return path.join(__dirname, "../external_folder")
+  return path.join(parentPath, current)
+}
 
 export default getFilePath

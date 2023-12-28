@@ -3,18 +3,17 @@ import { asyncHandler } from "../../utils"
 import fs from "fs/promises"
 import getFilePath from "../../utils/getFilePath"
 
-const getScriptsContent = Router()
+const getFileContent = Router()
 
-getScriptsContent.post(
-  "/:script",
+getFileContent.post(
+  "/:file",
   // authenticateShortJWT,
   asyncHandler(async (req: any, res: Response) => {
-    const { script } = req.params
-    console.log("script", script)
+    const { file } = req.params
+    const parentPath: string | undefined = req?.body?.path
+    console.log("file", file)
     try {
-      console.log("okay")
-      console.log("first")
-      const filePath: string | undefined = getFilePath(`${script}.ts`)
+      const filePath: string | undefined = getFilePath(parentPath, file)
       if (filePath) {
         const fileContent = await fs.readFile(filePath, "utf-8")
         res.setHeader("Content-Type", "application/json")
@@ -29,4 +28,4 @@ getScriptsContent.post(
   })
 )
 
-export default getScriptsContent
+export default getFileContent

@@ -1,6 +1,4 @@
-import allScriptsRoutes from "./allScripts.routes"
-import allScriptsSetRoutes from "./allScripts.set.routes"
-import getScriptsContent from "./getScriptsContent.set.routes"
-import getProjectContent from "./getProjectContent.set.routes"
+import getFileContent from "./getFileContent.set.routes"
+import getFolderContent from "./getFolderContent.set.routes"
 
-export { allScriptsRoutes, allScriptsSetRoutes, getScriptsContent, getProjectContent }
+export { getFileContent, getFolderContent }

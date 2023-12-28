@@ -1,11 +1,9 @@
 import { Router } from "express"
 const routes = Router()
 
-import { allScriptsRoutes, allScriptsSetRoutes, getScriptsContent, getProjectContent } from "./api/allScripts"
+import { getFileContent, getFolderContent } from "./api/allScripts"
 
-// routes.use(`/all-scripts`, allScriptsRoutes) //get
-routes.use(`/all-scripts`, allScriptsSetRoutes) //post
-routes.use(`/getScriptsContent`, getScriptsContent)
-routes.use(`/get-project-content`, getProjectContent)
+routes.use(`/get-file-content`, getFileContent)
+routes.use(`/get-folder-content`, getFolderContent)
 
 export default routes
